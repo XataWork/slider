@@ -1,4 +1,64 @@
+.clearfix:after{
+    content: '.';
+    visibility: hidden;
+    width: 0px;
+    clear: both;
+    display: table;
+}
 .container{
     width: 960px;
     margin: 0 auto;
+}
+.slider{
+    width: 900px;
+    height: 700px;
+}
+.slider .window-slider{
+    width: 800px;
+    height: 600px;
+    overflow: hidden;
+}
+.slider .window-slider ul{
+    list-style-type: none;
+    padding: 0px;
+}
+.slider .window-slider ul li{
+    float: left;
+    width: 800px;
+    height: 600px;
+    overflow: hidden;
+}
+.slider .window-slider ul li img{
+    width: 800px;
+    max-height: 600px;
+}
+.slider .controls{
+    margin: 0 auto;
+    width: 300px;
+    text-align: center;
+}
+.slider .controls ul{
+    list-style: none;
+    padding: 0px;
+    margin: 0 auto;
+}
+.slider .controls ul li{
+    float: left;
+    width: 20px;
+    height: 20px;
+    background: #777;
+    border-radius: 50%;
+    margin: 0 20px;
+    cursor: pointer;
+    position: relative;
+}
+.slider .controls ul li:hover:after{
+    content: "";
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    background: #333;
 }
