@@ -3,13 +3,14 @@
 <head>
     <title>Слайдер на чистом js</title>
     <link rel="stylesheet" href="style.css"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="script.js"></script>
 </head>
 <body>
 <div class="container">
     <div class="slider">
         <div class="window-slider">
-            <ul>
+            <ul class="clearfix">
                 <li><img src="images/1.png" alt=""/></li>
                 <li><img src="images/2.png" alt=""/></li>
                 <li><img src="images/3.jpeg" alt=""/></li>
@@ -17,9 +18,9 @@
         </div>
         <div class="controls clearfix">
             <ul>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li id="1"></li>
+                <li id="2"></li>
+                <li id="3"></li>
             </ul>
         </div>
     </div>
