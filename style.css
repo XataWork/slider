@@ -72,3 +72,9 @@
     left: 3px;
     background: #333;
 }
+.slider #list-images{
+    -webkit-transition: margin-left 1s ease-in-out;
+    -moz-transition: margin-left 1s ease-in-out;
+    -o-transition: margin-left 1s ease-in-out;
+    -ms-transition: margin-left 1s ease-in-out;
+}
