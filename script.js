@@ -36,6 +36,11 @@ var BoozzSlider = {
     changeSlide: function(event){
         var idSlide = event.target.id;
         BoozzSlider.ulElem.style.marginLeft = -BoozzSlider.ulWidth*(idSlide-1)+"px";
+        var child = BoozzSlider.contrElem.children;
+        for(var i = 0; i<child.length; i++){
+            child[i].classList.remove('active');
+        }
+        event.target.classList.add('active');
     }
 }
 window.onload = function(){
