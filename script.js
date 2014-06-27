@@ -2,7 +2,9 @@
  * Created by boozz on 27.06.14.
  */
 /*Тут будет код слайдера
-*   Пока набросал на jQuery, для понимания шагов выполнения
+*   Решил сделать как-то по умному(типо ООП) не используя функциональный метод.
+*   Ниже на jQuery тоже самое только меньше строк.
+*
 * */
 var BoozzSlider = {
     ulName: 'list-images',
@@ -34,7 +36,6 @@ var BoozzSlider = {
     changeSlide: function(event){
         var idSlide = event.target.id;
         BoozzSlider.ulElem.style.marginLeft = -BoozzSlider.ulWidth*(idSlide-1)+"px";
-        console.log(BoozzSlider.ulWidth);
     }
 }
 window.onload = function(){
@@ -42,7 +43,8 @@ window.onload = function(){
 }
 
 
-
+/*Пример на jQuery
+* ps. Немного сделал изменил селекторы в HTML, скорее всего этот пример jQuery работать не будет*/
 //$(document).ready(function(){
 //    var slider = $('.slider');
 ////    var sliderWindow = $('.slider-window');
