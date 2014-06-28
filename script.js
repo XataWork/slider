@@ -4,6 +4,7 @@
 /*Тут будет код слайдера
 *   Решил сделать как-то по умному(типо ООП) не используя функциональный метод.
 *   Ниже на jQuery тоже самое только меньше строк.
+*   ps. Нубо код(ссылание на обьект внутри функций не очень правильно реализовано)
 *
 * */
 var BoozzSlider = {
@@ -16,6 +17,7 @@ var BoozzSlider = {
                 this.setParameters();
                 this.setWidthUl();
                 this.contrElem.addEventListener('click',this.changeSlide,false);
+                this.timer = setInterval(BoozzSlider.nextSlide,3000);
             }
     },
     setParameters: function(){
@@ -41,9 +43,53 @@ var BoozzSlider = {
             child[i].classList.remove('active');
         }
         event.target.classList.add('active');
+    },
+    nextSlide: function(){
+        console.log(this);
+        var child = BoozzSlider.contrElem.children;
+        var id = null;
+        for(var i = 0; i<child.length; i++ ){
+             if(child[i].classList == 'active'){
+                 id = +child[i].id;
+                 child[i].classList.remove('active');
+                 break;
+             }
+        }
+        if(id == child.length){
+            id = 0;
+        }
+        BoozzSlider.ulElem.style.marginLeft = -BoozzSlider.ulWidth*id+"px";
+        for(var i = 0; i<child.length; i++ ){
+            if(child[i].id == (id+1)){
+                child[i].classList.add('active');
+                break;
+            }
+        }
+    },
+    prevSlide: function(){
+        var child = BoozzSlider.contrElem.children;
+        var id = null;
+        for(var i = 0; i<child.length; i++ ){
+            if(child[i].classList == 'active'){
+                id = +child[i].id-1;
+                child[i].classList.remove('active');
+                break;
+            }
+        }
+        if(id == 0){
+            id = child.length;
+        }
+        BoozzSlider.ulElem.style.marginLeft = -BoozzSlider.ulWidth*(id-1)+"px";
+        for(var i = 0; i<child.length; i++ ){
+            if(child[i].id == id){
+                child[i].classList.add('active');
+                break;
+            }
+        }
     }
 }
 window.onload = function(){
+//    console.log(document.getElement);
     BoozzSlider.init({ulName:'list-images',controls:'controls'});
 }
 
