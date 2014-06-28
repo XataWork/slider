@@ -49,7 +49,7 @@ window.onload = function(){
 
 
 /*Пример на jQuery
-* ps. Немного сделал изменил селекторы в HTML, скорее всего этот пример jQuery работать не будет*/
+* ps. Немного изменил селекторы в HTML, скорее всего этот пример jQuery работать не будет*/
 //$(document).ready(function(){
 //    var slider = $('.slider');
 ////    var sliderWindow = $('.slider-window');
