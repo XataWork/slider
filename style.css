@@ -29,13 +29,19 @@
     overflow: hidden;
 }
 .slider .window-slider ul li img{
-    width: 800px;
+    width: 790px;
+    height: auto;
     max-height: 600px;
+    background: #fff;
+    padding: 4px;
+    border: 1px solid #979797;
+    border-radius: 5px;
 }
 .slider .controls{
     margin: 0 auto;
     width: 300px;
     text-align: center;
+    padding-top: 30px;
 }
 .slider .controls ul{
     list-style: none;
