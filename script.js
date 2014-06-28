@@ -17,7 +17,9 @@ var BoozzSlider = {
                 this.setParameters();
                 this.setWidthUl();
                 this.contrElem.addEventListener('click',this.changeSlide,false);
-                this.timer = setInterval(BoozzSlider.nextSlide,3000);
+                if(settings.autoPlay == true){
+                    this.timer = setInterval(BoozzSlider.nextSlide,3000);
+                }
             }
     },
     setParameters: function(){
@@ -89,8 +91,7 @@ var BoozzSlider = {
     }
 }
 window.onload = function(){
-//    console.log(document.getElement);
-    BoozzSlider.init({ulName:'list-images',controls:'controls'});
+    BoozzSlider.init({ulName:'list-images',controls:'controls',autoPlay: true});
 }
 
 
